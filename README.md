@@ -7,7 +7,10 @@ Example:
 
     blocking(function (a, b, cb) { cb(null, a + b) })(1, 2) === 3
 
-In the case of an error, an exception is thrown.
+In the case of an error, an exception is thrown. Additionally, an object to bind `this` can be passed. This is useful when
+wrapping object methods:
+
+    blocking(obj, obj.method)(42)
 
 Adding this package to you [Meteor](http://www.meteor.com/) application adds `blocking` function into the global scope
 which you can use to wrap an asynchronous function into a blocking function.

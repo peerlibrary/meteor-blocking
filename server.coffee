@@ -5,7 +5,11 @@ do -> # To not pollute the namespace
 
   future = require 'fibers/future'
 
-  blocking = (fun) ->
+  blocking = (obj, fun) ->
+    if not fun?
+      fun = obj
+      obj = null
+
     wrapped = future.wrap fun
-    (args...) ->
-      wrapped(args...).wait()
+    () ->
+      wrapped.apply(obj, arguments).wait()
