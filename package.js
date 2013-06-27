@@ -3,9 +3,12 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use('coffeescript', 'server');
-
   api.add_files([
-    'server.coffee'
+    'server.js'
   ], 'server');
+});
+
+Package.on_test(function (api) {
+  api.use(['blocking', 'tinytest', 'test-helpers'], ['server']);
+  api.add_files('tests.js', ['server']);
 });
