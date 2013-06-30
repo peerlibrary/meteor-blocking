@@ -12,6 +12,4 @@
       return wrapped.apply(obj, arguments).wait();
     };
   };
-
-  blocking.Fiber = fibers;
 })();
