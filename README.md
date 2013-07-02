@@ -12,5 +12,5 @@ wrapping object methods:
 
     blocking(obj, obj.method)(42)
 
-Adding this package to you [Meteor](http://www.meteor.com/) application adds `blocking` function into the global scope
+Adding this package to your [Meteor](http://www.meteor.com/) application adds `blocking` function into the global scope
 which you can use to wrap an asynchronous function into a blocking function.
