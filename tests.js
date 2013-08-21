@@ -7,6 +7,7 @@ Tinytest.add('meteor-blocking', function (test) {
   catch (e) {
   }
   test.isTrue(isDefined, "blocking is not defined");
+  test.isTrue(Package.blocking.blocking, "Package.blocking.blocking is not defined");
 
   test.equal(blocking(function (a, b, cb) { cb(null, a + b) })(1, 2), 3);
 
