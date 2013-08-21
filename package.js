@@ -3,6 +3,8 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+  api.export('blocking');
+
   api.add_files([
     'server.js'
   ], 'server');
