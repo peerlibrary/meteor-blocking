@@ -3,13 +3,16 @@
   var future = Npm.require('fibers/future');
 
   blocking = function (obj, fun) {
-    if (fun == null) {
+    if (!fun) {
       fun = obj;
-      obj = null;
+      obj = undefined;
     }
-    var wrapped = future.wrap(fun);
+    var wrapped = Meteor._wrapAsync(fun);
     var f = function () {
-      return wrapped.apply(obj, arguments).wait();
+      if (typeof obj === 'undefined') {
+        obj = this;
+      }
+      return wrapped.apply(obj, arguments);
     };
     f._blocking = true;
     return f;
