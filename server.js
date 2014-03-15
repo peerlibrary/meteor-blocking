@@ -1,7 +1,4 @@
 (function () {
-  var fibers = Npm.require('fibers');
-  var future = Npm.require('fibers/future');
-
   blocking = function (obj, fun) {
     if (!fun) {
       fun = obj;
