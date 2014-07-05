@@ -14,3 +14,17 @@ wrapping object methods:
 
 Adding this package to your [Meteor](http://www.meteor.com/) application adds `blocking` function into the global scope
 which you can use to wrap an asynchronous function into a blocking function.
+
+Server side only.
+
+Installation
+------------
+
+```
+mrt add blocking
+```
+
+Related projects
+----------------
+
+* Meteor provides now a `Meteor._wrapAsync` function with almost the same functionality
