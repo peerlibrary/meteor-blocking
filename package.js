@@ -11,6 +11,6 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
-  api.use(['blocking', 'tinytest', 'test-helpers'], ['server']);
-  api.add_files('tests.js', ['server']);
+  api.use(['blocking', 'tinytest', 'test-helpers'], 'server');
+  api.add_files('tests.js', 'server');
 });
