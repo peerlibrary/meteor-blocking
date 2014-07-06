@@ -1,4 +1,4 @@
-Tinytest.add('meteor-blocking', function (test) {
+Tinytest.add('blocking', function (test) {
   var isDefined = false;
   try {
     blocking;
