@@ -5,6 +5,10 @@
       "1.0.3"
     ],
     [
+      "peerlibrary:blocking",
+      "0.4.2"
+    ],
+    [
       "underscore",
       "1.0.0"
     ]
