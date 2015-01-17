@@ -7,7 +7,13 @@
       fun = obj;
       obj = undefined;
     }
-    var wrapped = Meteor._wrapAsync(fun);
+	var wrapped;
+	if (Meteor.wrapAsync) {
+      wrapped = Meteor.wrapAsync(fun);
+    }
+	else {
+      wrapped = Meteor._wrapAsync(fun);
+	}
     var f = function () {
       if (typeof obj === 'undefined') {
         obj = this;
