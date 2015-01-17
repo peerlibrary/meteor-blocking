@@ -21,10 +21,10 @@ Installation
 ------------
 
 ```
-mrt add blocking
+meteor add peerlibrary:blocking
 ```
 
 Related projects
 ----------------
 
-* Meteor provides now a `Meteor._wrapAsync` function with almost the same functionality
+* Meteor provides now a [Meteor.wrapAsync](http://docs.meteor.com/#/full/meteor_wrapasync) function with almost the same functionality. This package exists for compatibility reasons.
