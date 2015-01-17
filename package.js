@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Making async functions blocking",
-  version: '0.4.3',
+  version: '0.5.0',
   name: 'peerlibrary:blocking',
   git: 'https://github.com/peerlibrary/meteor-blocking.git'
 });
