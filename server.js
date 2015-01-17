@@ -1,5 +1,5 @@
 (function () {
-  var future = Npm.require('fibers/future');
+  var Future = Npm.require('fibers/future');
 
   // Inside blocking context functions should not be throwing exceptions but
   // call callback with first argument an error. Exceptions will not propagate
@@ -9,12 +9,14 @@
       fun = obj;
       obj = undefined;
     }
-    var wrapped = future.wrap(fun);
+    var future = new Future();
     var f = function () {
-      if (typeof obj === 'undefined') {
+      if (_.isUndefined(obj)) {
         obj = this;
       }
-      return wrapped.apply(obj, arguments).wait();
+      var args = _.toArray(arguments);
+      fun.apply(obj, args.concat(future.resolver()));
+      return future.wait();
     };
     f._blocking = true;
     return f;

@@ -6,7 +6,9 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+  api.use('underscore');
   api.versionsFrom('METEOR@1.0.2.1');
+
   api.export('blocking');
 
   api.add_files([
