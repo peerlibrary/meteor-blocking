@@ -27,4 +27,11 @@ meteor add peerlibrary:blocking
 Related projects
 ----------------
 
-* Meteor provides now a [Meteor.wrapAsync](http://docs.meteor.com/#/full/meteor_wrapasync) function with almost the same functionality. This package exists for compatibility reasons.
+* Meteor provides now a [Meteor.wrapAsync](http://docs.meteor.com/#/full/meteor_wrapasync) function with similar
+  functionality, but if the last provided argument to the resulting blocking function is a function, it will
+  process it in a special way as a callback. This might lead to [issues if you are making blocking functions
+  which might normally take non-callback functions as arguments](https://github.com/meteor/meteor/issues/2408).
+  This package is thus more suitable for functions which take functions as arguments.
+* [meteorhacks:async](https://github.com/meteorhacks/meteor-async) provides additionally a whole suite of helper
+  functions which makes it easier to make blocking object methods. This package can also do that, but you have
+  to manually do it for each method (or create your own loop).
