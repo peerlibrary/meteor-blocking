@@ -8,12 +8,12 @@ blocking = function (obj, fun) {
     fun = obj;
     obj = undefined;
   }
-  var future = new Future();
   var f = function () {
     if (_.isUndefined(obj)) {
       obj = this;
     }
     var args = _.toArray(arguments);
+    var future = new Future();
     fun.apply(obj, args.concat(future.resolver()));
     return future.wait();
   };
