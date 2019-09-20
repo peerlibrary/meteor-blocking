@@ -30,6 +30,6 @@ Tinytest.add('blocking', function (test) {
   })(1, 2, function (a, b) {return a + b}), 3);
 
   test.throws(function () {
-    blocking(function (a, b, cb) { cb("test error") })(1, 2)
-  }, /^test error$/);
+    blocking(function (a, b, cb) { cb("test error") })(1, 2);
+  });
 });

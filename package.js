@@ -1,22 +1,28 @@
 Package.describe({
   summary: "Making async functions blocking",
-  version: '0.5.2',
+  version: '0.6.0',
   name: 'peerlibrary:blocking',
   git: 'https://github.com/peerlibrary/meteor-blocking.git'
 });
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
+  api.versionsFrom('METEOR@1.8.1');
+
   api.use('underscore');
-  api.versionsFrom('METEOR@1.0.2.1');
 
   api.export('blocking');
 
-  api.add_files([
+  api.addFiles([
     'server.js'
   ], 'server');
 });
 
-Package.on_test(function (api) {
-  api.use(['peerlibrary:blocking', 'tinytest', 'test-helpers'], 'server');
-  api.add_files('tests.js', 'server');
+Package.onTest(function (api) {
+  api.use([
+    'peerlibrary:blocking',
+    'tinytest',
+    'test-helpers'
+  ], 'server');
+
+  api.addFiles('tests.js', 'server');
 });
